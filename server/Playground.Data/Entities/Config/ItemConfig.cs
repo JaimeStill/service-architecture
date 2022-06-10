@@ -10,6 +10,7 @@ public static class ItemConfig
             .Entity<Item>()
             .HasDiscriminator(x => x.Type)
             .HasValue<Item>("item")
-            .HasValue<Armor>("armor");
+            .HasValue<Armor>("armor")
+            .HasValue<Weapon>("weapon");
     }
 }

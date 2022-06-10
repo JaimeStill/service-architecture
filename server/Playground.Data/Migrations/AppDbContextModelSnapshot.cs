@@ -48,9 +48,6 @@ namespace Playground.Data.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -60,6 +57,9 @@ namespace Playground.Data.Migrations
 
                     b.Property<string>("Url")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Weight")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -77,10 +77,17 @@ namespace Playground.Data.Migrations
                     b.Property<int>("Defense")
                         .HasColumnType("int");
 
-                    b.Property<int>("Weight")
+                    b.HasDiscriminator().HasValue("armor");
+                });
+
+            modelBuilder.Entity("Playground.Data.Entities.Weapon", b =>
+                {
+                    b.HasBaseType("Playground.Data.Entities.Item");
+
+                    b.Property<int>("Damage")
                         .HasColumnType("int");
 
-                    b.HasDiscriminator().HasValue("armor");
+                    b.HasDiscriminator().HasValue("weapon");
                 });
 
             modelBuilder.Entity("Playground.Data.Entities.Item", b =>

@@ -30,10 +30,10 @@ namespace Playground.Data.Migrations
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Url = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Weight = table.Column<int>(type: "int", nullable: false),
                     Defense = table.Column<int>(type: "int", nullable: true),
-                    Weight = table.Column<int>(type: "int", nullable: true)
+                    Damage = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

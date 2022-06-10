@@ -8,7 +8,7 @@ public static class ArmorExtensions
     public static IQueryable<Armor> Search(this IQueryable<Armor> armor, string search) =>
         armor.Where(x =>
             x.Name.ToLower().Contains(search.ToLower())
-            || x.Description.ToLower().Contains(search.ToLower())
+            || x.Category.Value.ToLower().Contains(search.ToLower())
         );
 }
 

@@ -9,5 +9,7 @@ public static class ServiceExtensions
         services.AddScoped(typeof(IService<>), typeof(ServiceBase<>));
         services.AddScoped<ArmorService>();
         services.AddScoped<CategoryService>();
+        services.AddScoped<ItemService>();
+        services.AddScoped<WeaponService>();
     }
 }

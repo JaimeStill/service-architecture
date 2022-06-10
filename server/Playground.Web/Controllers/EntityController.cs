@@ -18,6 +18,10 @@ public class EntityController<T> : ControllerBase where T : EntityBase
     public virtual async Task<ActionResult<QueryResult<T>>> Query([FromQuery]QueryParams query) =>
         Ok(await svc.QueryAll(query));
 
+    [HttpGet("[action]/{id}")]
+    public virtual async Task<ActionResult<T>> Find([FromRoute]int id) =>
+        Ok(await svc.Find(id));
+
     [HttpPost("[action]")]
     public virtual async Task<ActionResult<T>> Save([FromBody]T entity) =>
         Ok(await svc.Save(entity));
