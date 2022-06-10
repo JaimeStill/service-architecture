@@ -24,7 +24,7 @@ body {
 
 .app-container {
   overflow: auto;
-  height: calc(100% - 84px);
+  height: calc(100% - 64px);
 }
 
 .docs-container {
@@ -33,7 +33,7 @@ body {
 }
 
 section.toolbar-container {
-  height: calc(100% - 84px);
+  height: calc(100% - 64px);
 }
 
 section.scroll-container {
@@ -169,10 +169,10 @@ button.mat-icon-button.small {
 
 @media (min-width: 0) and (max-width: 599px) {
   .app-container {
-    height: calc(100% - 76px);
+    height: calc(100% - 56px);
   }
 
   .section.toolbar-container {
-    height: calc(100% - 76px);
+    height: calc(100% - 56px);
   }
 }

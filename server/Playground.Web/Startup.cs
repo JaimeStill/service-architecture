@@ -1,7 +1,6 @@
 [assembly:System.Runtime.Versioning.SupportedOSPlatform("windows")]
 namespace Playground.Web;
 
-using Playground.Core.Banner;
 using Playground.Core.Extensions;
 using Playground.Core.Logging;
 using Playground.Core.Sockets;
@@ -64,13 +63,6 @@ public class Startup
 
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
-
-        services.AddSingleton(new BannerConfig
-        {
-            Label = Configuration.GetValue<string>("AppBannerLabel"),
-            Background = Configuration.GetValue<string>("AppBannerBackground"),
-            Color = Configuration.GetValue<string>("AppBannerColor")
-        });
 
         if (Environment.IsDevelopment())
         {

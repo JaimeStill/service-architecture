@@ -20,18 +20,13 @@ import { MaterialModule } from './material.module';
 import { ServerConfig } from './config';
 import { Components } from './components';
 import { Dialogs } from './dialogs';
-import { Directives } from './directives';
 import { Forms } from './forms';
-import { Pipes } from './pipes';
-import { AuthInterceptor } from './services';
 
 @NgModule({
   declarations: [
     ...Components,
     ...Dialogs,
-    ...Directives,
-    ...Forms,
-    ...Pipes
+    ...Forms
   ],
   imports: [
     CommonModule,
@@ -44,14 +39,10 @@ import { AuthInterceptor } from './services';
   exports: [
     ...Components,
     ...Dialogs,
-    ...Directives,
     ...Forms,
-    ...Pipes,
     MaterialModule
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
-  ]
+  providers: []
 })
 export class CoreModule {
   static forRoot(config: ServerConfig): ModuleWithProviders<CoreModule> {

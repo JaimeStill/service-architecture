@@ -1,10 +1,23 @@
-<p class="m8 mat-title">Home</p>
-<ng-template #loading>
-  <mat-progress-bar mode="indeterminate"
-                    color="accent"></mat-progress-bar>
-</ng-template>
-<ng-container *ngIf="categorySrc.queryResult$ | async as query else loading">
-  <section *ngIf="query.data?.length > 0">
-    <p *ngFor="let category of query.data">{{category.value}}</p>
-  </section>
-</ng-container>
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+     routerLink="categories"
+     routerLinkActive="active">
+    Categories
+  </a>
+  <a mat-tab-link
+     routerLink="items"
+     routerLinkActive="active">
+    Items
+  </a>
+  <a mat-tab-link
+     routerLink="armor"
+     routerLinkActive="active">
+    Armor
+  </a>
+  <a mat-tab-link
+     routerLink="weapons"
+     routerLinkActive="active">
+    Weapons
+  </a>
+</nav>
+<router-outlet></router-outlet>
