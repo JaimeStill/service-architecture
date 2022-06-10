@@ -1,0 +1,13 @@
+<ng-template #loading>
+  <mat-progress-bar mode="indeterminate"
+                    color="accent"></mat-progress-bar>
+</ng-template>
+<ng-container *ngIf="weaponSrc.queryResult$ | async as query else loading">
+  <async-source-layout searchLabel="Search Weapons"
+                       [src]="weaponSrc">
+    <section *ngFor="let weapon of query.data"
+             class="m4 background-card card-outline-accent rounded p4">
+      <p class="mat-body-strong m4">{{weapon.name}}</p>
+    </section>
+  </async-source-layout>
+</ng-container>

@@ -71,7 +71,7 @@ export class CoreService {
   generateInputObservable = (input: ElementRef): Observable<string> =>
     fromEvent(input.nativeElement, 'keyup')
       .pipe(
-        debounceTime(800),
+        debounceTime(500),
         map((event: any) => event.target.value),
         distinctUntilChanged()
       )

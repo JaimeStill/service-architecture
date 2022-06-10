@@ -1,0 +1,13 @@
+<ng-template #loading>
+  <mat-progress-bar mode="indeterminate"
+                    color="accent"></mat-progress-bar>
+</ng-template>
+<ng-container *ngIf="armorSrc.queryResult$ | async as query else loading">
+  <async-source-layout searchLabel="Search Armor"
+                       [src]="armorSrc">
+    <section *ngFor="let armor of query.data"
+             class="m4 background-card card-outline-accent rounded p4">
+      <p class="mat-body-strong m4">{{armor.name}}</p>
+    </section>
+  </async-source-layout>
+</ng-container>

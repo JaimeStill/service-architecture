@@ -1,0 +1,13 @@
+<ng-template #loading>
+  <mat-progress-bar mode="indeterminate"
+                    color="accent"></mat-progress-bar>
+</ng-template>
+<ng-container *ngIf="categorySrc.queryResult$ | async as query else loading">
+  <async-source-layout searchLabel="Search Categories"
+                       [src]="categorySrc">
+    <section *ngFor="let category of query.data"
+             class="m4 background-card card-outline-accent rounded p4">
+      <p class="mat-body-strong m4">{{category.value}}</p>
+    </section>
+  </async-source-layout>
+</ng-container>
