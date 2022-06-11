@@ -8,6 +8,7 @@ import {
   ArmorApi,
   QuerySource,
   Sync,
+  SyncNode,
   SyncRoute,
   SyncSocket
 } from 'core';
@@ -25,9 +26,8 @@ export class ArmorRoute extends SyncRoute<Armor> implements OnDestroy {
     public armorApi: ArmorApi
   ) {
     super(
-      'armor',
+      new SyncNode('armor', ['item']),
       sync,
-      ['armor', 'item'],
       (sync: Sync) => {
         console.log('sync armor refresh', sync);
         this.armorSrc.forceRefresh()

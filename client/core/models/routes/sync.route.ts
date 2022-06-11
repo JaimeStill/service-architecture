@@ -1,6 +1,7 @@
 import {
   EntityBase,
-  Sync
+  Sync,
+  SyncNode
 } from '../../models';
 
 import { Subscription } from 'rxjs';
@@ -16,7 +17,7 @@ export abstract class SyncRoute<T extends EntityBase> {
 
   private filterState = (data: Sync) => {
     console.log('filterState', data);
-    if (this.listeners.some(this.checkListener(data))) {
+    if (this.node.listeners.some(this.checkListener(data))) {
       if (this.id)
         return this.id === data.id
           ? true
@@ -28,9 +29,8 @@ export abstract class SyncRoute<T extends EntityBase> {
   }
 
   constructor(
-    protected endpoint: string,
+    protected node: SyncNode,
     protected sync: SyncSocket,
-    protected listeners: string[],
     protected refresh: (sync: Sync) => void,
     protected id: number | null = null
   ) {
@@ -44,9 +44,11 @@ export abstract class SyncRoute<T extends EntityBase> {
   }
 
   protected trigger = (data: T, isRemoved: boolean = false) =>
-    this.sync.triggerSync({
-      endpoint: this.endpoint,
-      id: data.id ? data.id : null,
-      isRemoved
-    })
+    this.sync.triggerSync(new Sync(
+      this.node.endpoint,
+      {
+        id: data.id ? data.id : null,
+        isRemoved
+      }
+    ))
 }
