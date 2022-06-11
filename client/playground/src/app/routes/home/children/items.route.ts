@@ -6,9 +6,9 @@ import {
 import {
   Item,
   ItemApi,
+  ItemSyncNode,
   QuerySource,
   Sync,
-  SyncNode,
   SyncRoute,
   SyncSocket
 } from 'core';
@@ -26,7 +26,7 @@ export class ItemsRoute extends SyncRoute<Item> implements OnDestroy {
     public itemApi: ItemApi
   ) {
     super(
-      new SyncNode('item', ['armor', 'weapon']),
+      new ItemSyncNode(),
       sync,
       (sync: Sync) => {
         console.log('sync item refresh', sync);
