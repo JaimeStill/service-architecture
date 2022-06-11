@@ -3,14 +3,12 @@ namespace Playground.Web;
 
 using Playground.Core.Extensions;
 using Playground.Core.Logging;
-using Playground.Core.Sockets;
 using Playground.Core.Upload;
 using Playground.Data;
 using Playground.Data.Services;
 using Playground.Web.Hubs;
 
 using Microsoft.AspNetCore.OData;
-using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json;
@@ -82,8 +80,6 @@ public class Startup
         }
 
         services.AddSignalR();
-        services.AddSingleton<IUserIdProvider, NameUserIdProvider>();
-        services.AddSingleton<SocketGroupProvider>();
         services.AddLogging();
         services.RegisterServices();
     }

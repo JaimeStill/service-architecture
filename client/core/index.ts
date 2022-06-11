@@ -5,6 +5,7 @@ export * from './dialogs';
 export * from './forms';
 export * from './models';
 export * from './services';
+export * from './sockets';
 
 export * from './core.module';
 export * from './material.module';

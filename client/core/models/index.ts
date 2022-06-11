@@ -1,5 +1,6 @@
 export * from './api';
 export * from './query';
-
-export * from './storage-state';
-export * from './tab';
+export * from './entity-base';
+export * from './routes';
+export * from './socket-state';
+export * from './sync';

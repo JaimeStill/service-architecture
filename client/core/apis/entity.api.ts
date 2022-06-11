@@ -41,15 +41,13 @@ export abstract class EntityApi<T> {
   find = (id: number): Promise<T> =>
     this.execute(this.find$(id));
 
-  save$ = (entity: T): Observable<T> =>
-    this.http.post<T>(`${this.api}save`, entity);
-
   save = (entity: T): Promise<T> =>
-    this.execute(this.save$(entity));
-
-  remove$ = (entity: T): Observable<boolean> =>
-    this.http.post<boolean>(`${this.api}remove`, entity);
+    this.execute(
+      this.http.post<T>(`${this.api}save`, entity)
+    );
 
   remove = (entity: T): Promise<boolean> =>
-    this.execute(this.remove$(entity));
+    this.execute(
+      this.http.post<boolean>(`${this.api}remove`, entity)
+    );
 }
