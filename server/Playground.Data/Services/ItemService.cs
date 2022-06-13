@@ -29,4 +29,12 @@ public class ItemService : ServiceBase<Item>
             x.Url.ToLower()
                 .Equals(url.ToLower())
         );
+
+    public async Task<bool> Validate(Item item) =>
+        !await set
+            .AnyAsync(x =>
+                x.Id != item.Id
+                && x.Type == item.Type
+                && x.Name.ToLower() == item.Name.ToLower()
+            );
 }

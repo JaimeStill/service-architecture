@@ -1,7 +1,6 @@
 import {
   Component,
-  Inject,
-  OnInit
+  Inject
 } from '@angular/core';
 
 import {
@@ -9,30 +8,15 @@ import {
   MAT_DIALOG_DATA
 } from '@angular/material/dialog';
 
-import {
-  ArmorApi,
-  CategoryApi
-} from '../../apis';
-
 import { Armor } from '../../models';
 
 @Component({
   selector: 'armor-dialog',
-  templateUrl: 'armor.dialog.html',
-  providers: [
-    ArmorApi,
-    CategoryApi
-  ]
+  templateUrl: 'armor.dialog.html'
 })
-export class ArmorDialog implements OnInit {
+export class ArmorDialog {
   constructor(
-    private armorApi: ArmorApi,
-    private dialog: MatDialogRef<ArmorDialog>,
-    public categoryApi: CategoryApi,
-    @Inject(MAT_DIALOG_DATA) public armor: Armor
+    @Inject(MAT_DIALOG_DATA) public armor: Armor,
+    public dialog: MatDialogRef<ArmorDialog>
   ) { }
-
-  ngOnInit() {
-
-  }
 }

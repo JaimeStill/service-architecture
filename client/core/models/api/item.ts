@@ -1,3 +1,9 @@
+import {
+  FormBuilder,
+  FormGroup,
+  Validators
+} from '@angular/forms';
+
 import { Category } from './category';
 import { EntityBase } from '../entity-base';
 import { SyncNode } from '../sync';
@@ -37,3 +43,29 @@ export class WeaponSyncNode extends SyncNode {
     super('weapon', ['item', 'category']);
   }
 }
+
+const ToItemForm = (item: Item) => {
+  return {
+    id: [item?.id],
+    categoryId: [item?.categoryId, Validators.required],
+    type: [item?.type],
+    name: [item?.name, Validators.required],
+    url: [item?.url],
+    weight: [item?.weight, Validators.required]
+  }
+}
+
+export const GenerateItemForm = (item: Item, fb: FormBuilder): FormGroup =>
+  fb.group(ToItemForm(item));
+
+export const GenerateArmorForm = (armor: Armor, fb: FormBuilder): FormGroup =>
+  fb.group({
+    ...ToItemForm(armor),
+    defense: [armor?.defense, Validators.required],
+  });
+
+export const GenerateWeaponForm = (weapon: Weapon, fb: FormBuilder): FormGroup =>
+  fb.group({
+    ...ToItemForm(weapon),
+    damage: [weapon?.damage, Validators.required]
+  });

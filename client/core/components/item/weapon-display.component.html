@@ -1,0 +1,22 @@
+<section fxFlex
+         fxLayout="column"
+         fxLayoutAlign="space-between stretch"
+         class="p4">
+  <ng-template #loading>
+    <mat-progress-bar class="m4"
+                      mode="indeterminate"
+                      color="accent"></mat-progress-bar>
+  </ng-template>
+  <section fxLayout="row"
+           fxLayoutAlign="space-between center">
+    <ng-container *ngIf="category else loading">
+      <p class="m4 mat-body-strong">{{category?.value}} </p>
+    </ng-container>
+    <p class="m4 mat-body-strong">{{weapon?.name}}</p>
+  </section>
+  <section fxLayout="row"
+           fxLayoutAlign="space-between center">
+    <p class="m4">Weight: {{weapon?.weight}}</p>
+    <p class="m4">Damage: {{weapon?.damage}}</p>
+  </section>
+</section>

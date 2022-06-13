@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+  <section fxLayout="column"
+           fxLayoutAlign="start stretch">
+    <mat-form-field class="my4">
+      <mat-label>Category</mat-label>
+      <input formControlName="value"
+             matInput>
+      <mat-error *ngIf="value?.errors?.required">Category is required.</mat-error>
+      <mat-error *ngIf="value?.errors?.api">Category is already in use.</mat-error>
+    </mat-form-field>
+  </section>
+</form>

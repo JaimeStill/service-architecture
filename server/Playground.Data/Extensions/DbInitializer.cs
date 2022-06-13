@@ -24,14 +24,12 @@ public static class DbInitializer
                         new Armor
                         {
                             Name = "Armor of the Old Gods",
-                            Url = "armor-of-the-old-gods",
                             Defense = 24,
                             Weight = 3
                         },
                         new Armor
                         {
                             Name = "Daedric Armor",
-                            Url = "daedric-armor",
                             Defense = 49,
                             Weight = 50
                         }
@@ -45,14 +43,12 @@ public static class DbInitializer
                         new Armor
                         {
                             Name = "The Jagged Crown",
-                            Url = "jagged-crown",
                             Defense = 23,
                             Weight = 9
                         },
                         new Armor
                         {
                             Name = "Deathbrand Helm",
-                            Url = "deathbrand-helm",
                             Defense = 18,
                             Weight = 2
                         }
@@ -66,14 +62,12 @@ public static class DbInitializer
                         new Weapon
                         {
                             Name = "Wuuthrad",
-                            Url = "wuuthrad",
                             Damage = 25,
                             Weight = 25
                         },
                         new Weapon
                         {
                             Name = "Tsun's Battleaxe",
-                            Url = "tsuns-battleaxe",
                             Damage = 27,
                             Weight = 36
                         }
@@ -87,14 +81,12 @@ public static class DbInitializer
                         new Weapon
                         {
                             Name = "Bloodscythe",
-                            Url = "bloodscythe",
                             Damage = 13,
                             Weight = 10
                         },
                         new Weapon
                         {
                             Name = "Grimsever",
-                            Url = "grimsever",
                             Damage = 12,
                             Weight = 14
                         }

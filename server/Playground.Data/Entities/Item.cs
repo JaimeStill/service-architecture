@@ -1,3 +1,5 @@
+using Playground.Core.Extensions;
+
 namespace Playground.Data.Entities;
 
 public class Item : EntityBase
@@ -5,7 +7,7 @@ public class Item : EntityBase
     public int CategoryId { get; set; }
     public string Type { get; set; }
     public string Name { get; set; }
-    public string Url { get; set; }
+    public string Url => Name.UrlEncode();
     public int Weight { get; set; }
 
     public Category Category { get; set; }

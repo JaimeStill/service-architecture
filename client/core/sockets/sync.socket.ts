@@ -11,6 +11,7 @@ import {
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ServerConfig } from '../config';
+import { SnackerService } from '../services';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,8 @@ export class SyncSocket {
   state$ = this.state.asObservable();
 
   constructor(
-    private config: ServerConfig
+    private config: ServerConfig,
+    private snacker: SnackerService
   ) {
     if (config)
       this.endpoint = `${config.server}sync`;
@@ -39,7 +41,10 @@ export class SyncSocket {
 
     this.connection.on(
       'sync',
-      (data: Sync) => this.state.next(data)
+      (data: Sync) => {
+        this.snacker.sendColorMessage(`SyncSocket: sync received`, ['snacker-indigo']);
+        this.state.next(data)
+      }
     );
 
     this.connection

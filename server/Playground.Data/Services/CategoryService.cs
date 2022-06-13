@@ -32,4 +32,11 @@ public class CategoryService : ServiceBase<Category>
             .Where(x => x.CategoryId == categoryId)
             .OrderBy(x => x.Name)
             .ToListAsync();
+
+    public async Task<bool> Validate(Category category) =>
+        !await set
+            .AnyAsync(x =>
+                x.Id != category.Id
+                && x.Value.ToLower() == category.Value.ToLower()
+            );
 }

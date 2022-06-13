@@ -36,6 +36,7 @@ public class ServiceBase<T> : IService<T> where T : EntityBase
         try
         {
             await set.AddAsync(entity);
+            await db.SaveChangesAsync();
             return entity;
         }
         catch (Exception ex)

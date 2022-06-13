@@ -23,4 +23,9 @@ public class CategoryController : EntityController<Category>
     [ProducesResponseType(typeof(List<Item>), 200)]
     public async Task<IActionResult> GetItems([FromRoute]int categoryId) =>
         Ok(await categorySvc.GetItems(categoryId));
+
+    [HttpPost("[action]")]
+    [ProducesResponseType(typeof(bool), 200)]
+    public async Task<IActionResult> Validate([FromBody]Category category) =>
+        Ok(await categorySvc.Validate(category));
 }

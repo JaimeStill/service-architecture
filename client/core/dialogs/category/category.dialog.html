@@ -1,0 +1,15 @@
+<div class="mat-typography">
+  <h2 mat-dialog-title>
+    <span *ngIf="category?.id > 0">Edit Category</span>
+    <span *ngIf="!(category.id > 0)">Add Category</span>
+  </h2>
+  <mat-dialog-content>
+    <category-editor [category]="category"
+                     (saved)="dialog.close($event)"></category-editor>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-stroked-button
+            color="warn"
+            mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>

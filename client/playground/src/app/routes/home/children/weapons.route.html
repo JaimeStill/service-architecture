@@ -1,3 +1,9 @@
+<section class="p8">
+  <button mat-stroked-button
+          (click)="addWeapon()">
+    Add Weapon
+  </button>
+</section>
 <ng-template #loading>
   <mat-progress-bar mode="indeterminate"
                     color="accent"></mat-progress-bar>
@@ -5,9 +11,12 @@
 <ng-container *ngIf="weaponSrc.queryResult$ | async as query else loading">
   <async-source-layout searchLabel="Search Weapons"
                        [src]="weaponSrc">
-    <section *ngFor="let weapon of query.data"
-             class="m4 background-card card-outline-accent rounded p4">
-      <p class="mat-body-strong m4">{{weapon.name}}</p>
-    </section>
+    <data-card *ngFor="let weapon of query.data"
+               [data]="weapon"
+               (edit)="editWeapon($event)"
+               (remove)="removeWeapon($event)">
+      <weapon-display fxFlex
+                      [weapon]="weapon"></weapon-display>
+    </data-card>
   </async-source-layout>
 </ng-container>

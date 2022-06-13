@@ -1,0 +1,35 @@
+<form [formGroup]="form">
+  <section fxLayout="column"
+           fxLayoutAlign="start stretch">
+    <mat-form-field class="my4">
+      <mat-label>Name</mat-label>
+      <input formControlName="name"
+             matInput>
+      <mat-error *ngIf="name?.errors?.required">Name is required.</mat-error>
+      <mat-error *ngIf="name?.errors?.api">Name is already in use.</mat-error>
+    </mat-form-field>
+    <ng-template #loading>
+      <mat-progress-bar mode="indeterminate"
+                        color="accent"></mat-progress-bar>
+    </ng-template>
+    <ng-container *ngIf="categoryApi.all$ | async as categories else loading">
+      <mat-form-field class="my4">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="categoryId">
+          <mat-option *ngFor="let category of categories"
+                      [value]="category.id">{{category.value}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </ng-container>
+    <mat-form-field class="my4">
+      <mat-label>Weight</mat-label>
+      <input formControlName="weight" type="number" matInput>
+      <mat-error *ngIf="weight?.errors?.required">Weight is required</mat-error>
+    </mat-form-field>
+    <mat-form-field class="my4">
+      <mat-label>Damage</mat-label>
+      <input formControlName="damage" type="number" matInput>
+      <mat-error *ngIf="damage?.errors?.required">Damage is required</mat-error>
+    </mat-form-field>
+  </section>
+</form>

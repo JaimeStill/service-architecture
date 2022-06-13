@@ -23,4 +23,13 @@ export class ItemApi extends EntityApi<Item> {
 
   findByName = (url: string): Promise<Item> =>
     this.execute(this.findByName$(url));
+
+  validate = (item: Item): Promise<boolean> =>
+    new Promise((resolve, reject) => {
+      this.http.post<boolean>(`${this.api}validate`, item)
+        .subscribe({
+          next: (data: boolean) => resolve(data),
+          error: (err: any) => reject(err)
+        })
+    });
 }

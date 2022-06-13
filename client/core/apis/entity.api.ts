@@ -39,7 +39,9 @@ export abstract class EntityApi<T> {
     this.http.get<T>(`${this.api}find/${id}`);
 
   find = (id: number): Promise<T> =>
-    this.execute(this.find$(id));
+    this.execute(
+      this.find$(id)
+    );
 
   save = (entity: T): Promise<T> =>
     this.execute(

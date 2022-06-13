@@ -11,9 +11,12 @@
 <ng-container *ngIf="armorSrc.queryResult$ | async as query else loading">
   <async-source-layout searchLabel="Search Armor"
                        [src]="armorSrc">
-    <section *ngFor="let armor of query.data"
-             class="m4 background-card card-outline-accent rounded p4">
-      <p class="mat-body-strong m4">{{armor.name}}</p>
-    </section>
+    <data-card *ngFor="let armor of query.data"
+               [data]="armor"
+               (edit)="editArmor($event)"
+               (remove)="removeArmor($event)">
+      <armor-display fxFlex
+                     [armor]="armor"></armor-display>
+    </data-card>
   </async-source-layout>
 </ng-container>

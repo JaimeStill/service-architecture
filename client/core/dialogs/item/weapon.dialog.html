@@ -1,0 +1,15 @@
+<div class="mat-typography">
+  <h2 mat-dialog-title>
+    <span *ngIf="weapon?.id > 0">Edit Weapon</span>
+    <span *ngIf="!(weapon.id > 0)">Add Weapon</span>
+  </h2>
+  <mat-dialog-content>
+    <weapon-editor [weapon]="weapon"
+                  (saved)="dialog.close($event)"></weapon-editor>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-stroked-button
+            color="warn"
+            mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
+</div>

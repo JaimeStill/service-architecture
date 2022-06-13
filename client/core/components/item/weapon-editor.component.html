@@ -1,0 +1,16 @@
+<section fxLayout="column"
+         fxLayoutAlign="start stretch"
+         [class]="cardStyle"
+         [style.width.px]="size">
+  <weapon-form [form]="form"></weapon-form>
+  <section fxLayout="row"
+           fxLayoutAlign="end center"
+           fxLayoutGap="16px">
+    <button mat-stroked-button
+            class="color-primary"
+            [disabled]="form.invalid"
+            (click)="save()">
+      Save Weapon
+    </button>
+  </section>
+</section>

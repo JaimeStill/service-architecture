@@ -5,9 +5,9 @@
 <ng-container *ngIf="itemSrc.queryResult$ | async as query else loading">
   <async-source-layout searchLabel="Search Items"
                        [src]="itemSrc">
-    <section *ngFor="let item of query.data"
-             class="m4 background-card card-outline-accent rounded p4">
-      <p class="mat-body-strong m4">{{item.name}}</p>
-    </section>
+    <display-card *ngFor="let item of query.data">
+      <item-display fxFlex
+                    [item]="item"></item-display>
+    </display-card>
   </async-source-layout>
 </ng-container>

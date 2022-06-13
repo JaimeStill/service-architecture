@@ -1,0 +1,21 @@
+<section fxFlex
+         fxLayout="column"
+         fxLayoutAlign="space-between stretch"
+         class="p4">
+  <ng-template #loading>
+    <mat-progress-bar mode="indeterminate"
+                      color="accent"></mat-progress-bar>
+  </ng-template>
+  <section fxLayout="row"
+           fxLayoutAlign="space-between center">
+    <p class="m4 mat-body-strong">{{item?.name}}</p>
+    <ng-container *ngIf="category else loading">
+      <p class="m4 mat-body-strong">{{category?.value}}</p>
+    </ng-container>
+  </section>
+  <section fxLayout="row"
+           fxLayoutAlign="space-between center">
+    <p class="m4">{{item?.type | titlecase}}</p>
+    <p class="m4">Weight: {{item?.weight}}</p>
+  </section>
+</section>

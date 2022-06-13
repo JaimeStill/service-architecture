@@ -22,15 +22,23 @@ export class CategoryApi extends EntityApi<Category> {
     super('category', config, generator, http);
   }
 
-  all$ = (): Observable<Category[]> =>
-    this.http.get<Category[]>(`${this.api}getAll`);
+  all$: Observable<Category[]> = this.http.get<Category[]>(`${this.api}getAll`);
 
   all = (): Promise<Category[]> =>
-    this.execute(this.all$());
+    this.execute(this.all$);
 
   items$ = (categoryId: number): Observable<Item[]> =>
     this.http.get<Item[]>(`${this.api}getItems/${categoryId}`);
 
   items = (categoryId: number): Promise<Item[]> =>
     this.execute(this.items$(categoryId));
+
+  validate = (category: Category): Promise<boolean> =>
+    new Promise((resolve, reject) => {
+      this.http.post<boolean>(`${this.api}validate`, category)
+        .subscribe({
+          next: (data: boolean) => resolve(data),
+          error: (err: any) => reject(err)
+        })
+    });
 }
