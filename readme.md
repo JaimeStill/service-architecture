@@ -5,9 +5,10 @@
 * [Architecture](#architecture)
 * [Data Synchronization Examples](#data-synchronization-examples)
 
-The intent of this repository is to establish a full stack monorepo-based  service-oriented architecture that supports data synchronization endpoint-based data synchronization across distributed clients via web sockets.
+The intent of this repository is to establish a full stack service-oriented architecture in a .NET + Angular monorepo. Additionally, the architecture supports endpoint-based data synchronization across distributed clients via web sockets.
 
 ## Prerequisites
+[Back to Top](#service-architecture)  
 
 * [git](https://git-scm.com)
 * [Node.js - LTS](https://nodejs.org)
@@ -16,6 +17,7 @@ The intent of this repository is to establish a full stack monorepo-based  servi
   * The connection strings in this project assume a server name of `DevSql`. You can change these in the [package.json](./package.json) `seed` script, as well as [appsettings.Development.json](./server/Playground.Web/appsettings.Development.json).
 
 ## Getting Started
+[Back to Top](#service-architecture)  
 
 ### Clone
 
@@ -85,6 +87,7 @@ npm run start:playground
 ```
 
 ## Architecture
+[Back to Top](#service-architecture)  
 
 ### .NET Server
 
@@ -117,6 +120,7 @@ Element | Description
 [playground](./client/playground/) | Angular application for demonstrating this architecture.
 
 ## Data Synchronization Examples
+[Back to Top](#service-architecture)  
 
 ### Syncing Data on the Same Route
 
