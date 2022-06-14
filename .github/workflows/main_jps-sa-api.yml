@@ -17,6 +17,7 @@ on:
       - .editorconfig
       - .gitignore
       - .angular.json
+      - deployment.md
       - notes.md
       - package-lock.json
       - package.json

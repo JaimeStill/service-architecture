@@ -17,6 +17,7 @@ on:
       - server/*
       - .editorconfig
       - .gitignore
+      - deployment.md
       - notes.md
       - package-lock.json
       - readme.md

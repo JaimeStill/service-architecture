@@ -1,6 +1,7 @@
 # Service Architecture
+[Playground App](https://jps-sa-app.azurewebsites.net) | [Playground API](https://jps-sa-api.azurewebsites.net/swagger)
 
-[![Build and Deploy App to Azure Web App](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-app.yml/badge.svg?branch=main)](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-app.yml) [![Build and Deploy API to Azure Web App](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-api.yml/badge.svg?branch=main)](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-api.yml)
+[![Build and Deploy App to Azure Web App](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-app.yml/badge.svg?branch=main)](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-app.yml) [![Build and Deploy API to Azure Web App](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-api.yml/badge.svg?branch=main)](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-api.yml)  
 
 * [Prerequisites](#prerequisites)
 * [Getting Started](#getting-started)
@@ -8,6 +9,8 @@
 * [Data Synchronization Examples](#data-synchronization-examples)
 
 The intent of this repository is to establish a full stack service-oriented architecture in a .NET + Angular monorepo. Additionally, the architecture supports endpoint-based data synchronization across distributed clients via web sockets.
+
+> For details on Azure Configuration and GitHub Actions deployment, see [deployment.md](./deployment.md).  
 
 ## Prerequisites
 [Back to Top](#service-architecture)  
