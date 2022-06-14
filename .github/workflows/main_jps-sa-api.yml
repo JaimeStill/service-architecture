@@ -24,15 +24,21 @@ jobs:
 
       - name: Build with dotnet
         run: dotnet build --configuration Release
+        working-directory: server
+
+      - name: Seed database
+        run: dotnet run -- ${{ secrets.AZUREAPPSERVICE_CONNECTIONSTRING }}
+        working-directory: server/dbseeder
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/playground-api
+        working-directory: server/Playground.Web
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          name: .playground-api
+          path: ${{env.DOTNET_ROOT}}/playground-api
 
   deploy:
     runs-on: windows-latest
@@ -45,7 +51,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: .net-app
+          name: .playground-api
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp

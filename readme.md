@@ -55,13 +55,13 @@ In VS Code, start launch the *Debug Playground* config.
 **Start without debugging**
 
 ```bash
-npm run start:server
+npm run start-server
 ```
 
 **Start in watch mode**
 
 ```bash
-npm run watch:server
+npm run watch-server
 ```
 
 ### Build `core` Angular Library
@@ -83,7 +83,7 @@ npm run watch
 > http://localhost:3000
 
 ```bash
-npm run start:playground
+npm run start-playground
 ```
 
 ## Architecture
