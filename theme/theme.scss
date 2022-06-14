@@ -3,11 +3,7 @@
 
 @include mat.core();
 
-@import '~@fortawesome/fontawesome-free/css/all.css';
-@import '~roboto-fontface/css/roboto/roboto-fontface.css';
-
 @import './elevation.scss';
-@import './icons.scss';
 @import './layout.scss';
 @import './styles.scss';
 @import './utility.scss';
