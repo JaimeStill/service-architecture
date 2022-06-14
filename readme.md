@@ -1,5 +1,7 @@
 # Service Architecture
 
+[![Build and Deploy App to Azure Web App](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-app.yml/badge.svg?branch=main)](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-app.yml) [![Build and Deploy API to Azure Web App](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-api.yml/badge.svg?branch=main)](https://github.com/JaimeStill/service-architecture/actions/workflows/main_jps-sa-api.yml)
+
 * [Prerequisites](#prerequisites)
 * [Getting Started](#getting-started)
 * [Architecture](#architecture)
