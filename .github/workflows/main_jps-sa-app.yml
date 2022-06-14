@@ -8,16 +8,16 @@ on:
     branches:
       - main
     paths-ignore:
-      - .angular
+      - .angular/*
       - .github/workflows/main_jps-sa-api.yml
-      - .vscode
-      - dist
-      - node_modules
-      - properties
-      - server
+      - .vscode/*
+      - dist/*
+      - node_modules/*
+      - properties/*
+      - server/*
       - .editorconfig
       - .gitignore
-      - notes
+      - notes.md
       - package-lock.json
       - readme.md
 
