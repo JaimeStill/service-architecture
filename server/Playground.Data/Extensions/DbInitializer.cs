@@ -10,7 +10,7 @@ public static class DbInitializer
         await db.Database.MigrateAsync();
         Console.WriteLine("Database initialized");
 
-        if (!await db.Categories.AnyAsync(x => x.Value == "Light" || x.Value == "Heavy"))
+        if (!await db.Categories.AnyAsync())
         {
             Console.WriteLine("Seeding categories and items...");
 
