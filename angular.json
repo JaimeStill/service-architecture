@@ -78,6 +78,7 @@
             "tsConfig": "client/playground/tsconfig.app.json",
             "assets": [
               "client/playground/src/favicon.ico",
+              "client/playground/src/web.config",
               "client/playground/src/assets",
               {
                 "glob": "**/*",

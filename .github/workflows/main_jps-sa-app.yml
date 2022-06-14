@@ -35,11 +35,11 @@ jobs:
         with:
           node-version: '16.x'
 
-      - name: npm install, build, and test
+      - name: npm install, build core, and build playground
         run: |
           npm install
-          npm run package-core --if-present
-          npm run package-playground --if-present
+          npm run package-core
+          npm run package-playground
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
