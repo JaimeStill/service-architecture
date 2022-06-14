@@ -27,7 +27,7 @@ jobs:
         working-directory: server
 
       - name: Seed database
-        run: dotnet run -- ${{ secrets.AZUREAPPSERVICE_CONNECTIONSTRING }}
+        run: & dotnet run -- '${{secrets.AZUREAPPSERVICE_CONNECTIONSTRING}}'
         working-directory: server/dbseeder
 
       - name: dotnet publish
