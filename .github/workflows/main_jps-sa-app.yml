@@ -8,8 +8,18 @@ on:
     branches:
       - main
     paths-ignore:
-      - server
+      - .angular
       - .github/workflows/main_jps-sa-api.yml
+      - .vscode
+      - dist
+      - node_modules
+      - properties
+      - server
+      - .editorconfig
+      - .gitignore
+      - notes
+      - package-lock.json
+      - readme.md
 
   workflow_dispatch:
 
