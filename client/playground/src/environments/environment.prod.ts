@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  server: 'http://api.domain.net/',
-  api: 'http://api.domain.net/'
+  server: 'https://jps-sa-api.azurewebsites.net/',
+  api: 'https://jps-sa-api.azurewebsites.net/api/'
 };
