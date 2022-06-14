@@ -7,9 +7,21 @@ on:
   push:
     branches:
       - main
-    paths:
-      - server/*
-      - .github/workflows/main_jps-sa-api.yml
+    paths-ignore:
+      - .angular/*
+      - .github/workflows/main_jps-sa-app.yml
+      - .vscode/*
+      - client/*
+      - properties/*
+      - theme/*
+      - .editorconfig
+      - .gitignore
+      - .angular.json
+      - notes.md
+      - package-lock.json
+      - package.json
+      - readme.md
+      - tsconfig.json
   workflow_dispatch:
 
 jobs:
