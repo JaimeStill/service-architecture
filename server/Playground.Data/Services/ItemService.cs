@@ -24,6 +24,11 @@ public class ItemService : ServiceBase<Item>
     public override async Task<QueryResult<Item>> QueryAll(QueryParams query) =>
         await Query(set, query, Search);
 
+    public IAsyncEnumerable<Item> GetAllAsync() =>
+        set
+            .OrderBy(x => x.Name)
+            .AsAsyncEnumerable();
+
     public async Task<Item> FindByName(string url) =>
         await set.FirstOrDefaultAsync(x =>
             x.Url.ToLower()
