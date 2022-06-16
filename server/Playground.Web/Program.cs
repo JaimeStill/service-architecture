@@ -16,10 +16,6 @@ public class Program
             {
                 logging
                     .ClearProviders()
-                    .AddConsole()
-                    .AddEventLog(settings =>
-                    {
-                        settings.SourceName = "Playground";
-                    });
+                    .AddConsole();
             });
 }

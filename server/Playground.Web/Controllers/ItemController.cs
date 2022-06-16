@@ -18,10 +18,6 @@ public class ItemController : EntityController<Item>
     public async Task<IActionResult> FindByName([FromRoute]string url) =>
         Ok(await itemSvc.FindByName(url));
 
-    [HttpGet("[action]")]
-    public IAsyncEnumerable<Item> GetAllAsync() =>
-        itemSvc.GetAllAsync();
-
     [HttpPost("[action]")]
     [ProducesResponseType(typeof(bool), 200)]
     public async Task<IActionResult> Validate([FromBody]Item item) =>
